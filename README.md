@@ -409,3 +409,92 @@ View the website at: http://localhost:3000
   }
 ]
 ```
+
+### Crop Endpoints
+
+#### Get all crops
+
+- **Endpoint:** `/api/crops`
+- **Method:** `GET`
+- **Request Headers:** None
+- **Response:**
+```json
+[
+  {
+    "id": 1,
+    "name": "Rice",
+    "crop_type_id": 1,
+    "crop_type": {
+      "id": 1,
+      "name": "Grain"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Tomato",
+    "crop_type_id": 2,
+    "crop_type": {
+      "id": 2,
+      "name": "Vegetable"
+    }
+  }
+]
+```
+
+#### Get all crops in a specific crop type (filtering by crop_type_id)
+
+- **Endpoint:** `/api/crops?crop_type_id=1`
+- **Method:** `GET`
+- **Request Headers:** None
+- **Response:**
+```json
+[
+  {
+    "id": 1,
+    "name": "Rice",
+    "crop_type_id": 1,
+    "crop_type": {
+      "id": 1,
+      "name": "Grain"
+    }
+  },
+  {
+    "id": 13,
+    "name": "Wheat",
+    "crop_type_id": 1,
+    "crop_type": {
+      "id": 1,
+      "name": "Grain"
+    }
+  },
+]
+```
+
+### Crop Type Endpoints
+
+#### Get all crop types
+
+- **Endpoint:** `/api/crop-types`
+- **Method:** `GET`
+- **Request Headers:** None
+- **Response:**
+```json
+[
+  {
+    "id": 1,
+    "name": "Grain"
+  },
+  {
+    "id": 2,
+    "name": "Vegetable"
+  },
+  {
+    "id": 3,
+    "name": "Legumes"
+  },
+  {
+    "id": 4,
+    "name": "Fruits"
+  }
+]
+```
