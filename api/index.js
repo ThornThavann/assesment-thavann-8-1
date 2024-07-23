@@ -8,6 +8,8 @@ import provinceRoutes from "./routes/province.js"
 import districtRoutes from "./routes/district.js"
 import accountRoutes from "./routes/account.js"
 import cropCycleRoutes from "./routes/cropCycle.js"
+import cropRoute from "./routes/crop.js";
+import cropTypeRoute from "./routes/cropType.js"
 
 config();
 
@@ -17,6 +19,8 @@ const app = express();
 app.use(cors());
 app.use(json());
 
+app.use("/api/crops", cropRoute);
+app.use("/api/crop-types", cropTypeRoute);
 app.use("/api/accounts", accountRoutes);
 app.use("/api/provinces", provinceRoutes);
 app.use("/api/districts", districtRoutes);
